@@ -19,14 +19,21 @@ export default {
   coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
   moduleDirectories: ['node_modules'],
+  modulePaths: ['<rootDir>src'],
   testMatch: [
     // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
   rootDir: '../../',
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   preset: 'ts-jest',
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
+  },
+  moduleNameMapper: {
+    '\\.(css|scss)$': 'identity-obj-proxy',
+    '\\.svg$': '<rootDir>/config/jest/__mocks__/svgMock.ts',
+    '^react-i18next$': '<rootDir>/config/jest/__mocks__/react-i18next.ts',
   },
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,

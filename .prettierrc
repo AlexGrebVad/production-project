@@ -10,5 +10,5 @@
   "proseWrap": "never",
   "htmlWhitespaceSensitivity": "strict",
   "endOfLine": "lf",
-  "printWidth": 90
+  "printWidth": 100
 }
